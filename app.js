@@ -1,3 +1,5 @@
+  console.log("a");
+
 function uniqueSort (arr) {
   let temp=arr.slice(0).sort();
   let current=temp[0];
@@ -9,7 +11,6 @@ function uniqueSort (arr) {
 }
 
 $(".js-text-analysis-form").submit (function () {
-  console.log("a");
   $(".js-unhide-on-submit").removeClass("hidden");
   let words=$(this).text().toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
   console.log(words);
