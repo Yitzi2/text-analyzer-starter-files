@@ -11,6 +11,7 @@ function uniqueSort (arr) {
 $(".js-text-analysis-form").submit (function () {
   $(".js-unhide-on-submit").removeClass("hidden");
   let words=$(this).text().toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
+  console.log(words);
   $(".js-word-count").text(words.length);
   $(".js-unique-words").text(uniqueSort(words).length);
   return false;
