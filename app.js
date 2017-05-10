@@ -8,17 +8,21 @@ function uniqueSort (arr) {
   return temp.filter(word=>word!==null);
 }
 
-$(".js-text-analysis-form").submit (
+function redefineSubmit(){
+  $(".js-text-analysis-form").submit (
     function () {
-    $(".js-unhide-on-submit").removeClass("hidden");
-    let words=$(".js-text-analysis-input").val().toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
-    $(".js-word-count").text(words.length);
-    $(".js-unique-words").text(uniqueSort(words).length);
-    let sumCounter=0;
-    for (i=0; i<words.length; ++i) {
-    sumCounter+=words[i].length;
+      $(".js-unhide-on-submit").removeClass("hidden");
+      let words=$(".js-text-analysis-input").val().toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
+      $(".js-word-count").text(words.length);
+      $(".js-unique-words").text(uniqueSort(words).length);
+      let sumCounter=0;
+      for (i=0; i<words.length; ++i) {
+        sumCounter+=words[i].length;
+      }
+      $(".js-average-length").text(sumCounter/words.length);
+    return false;
     }
-    $(".js-average-length").text(sumCounter/words.length);
-  return false;
   }
 )
+  
+$(redefineSubmit);
