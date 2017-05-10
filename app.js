@@ -12,7 +12,7 @@ $(".js-text-analysis-form").submit (function () {
   $(".js-unhide-on-submit").removeClass("hidden");
   let words=$(this).text().toLowerCase().split(/[ ,!.";:-]+/).filter(Boolean);
   $(".js-word-count").text(words.length);
-  $(".js-unique-words").text("boo");
+  $(".js-unique-words").text(words.uniqueSort.length);
   return false;
   }
 )
