@@ -1,5 +1,3 @@
-alert("a");
-
 function uniqueSort (arr) {
   let temp=arr.slice(0).sort();
   let current=temp[0];
