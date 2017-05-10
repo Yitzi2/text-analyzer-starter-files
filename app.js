@@ -22,8 +22,8 @@ function redefineSubmit(){
       $(".js-average-length").text(sumCounter/words.length);
     return false;
     }
-  }
-)
+  )
+}
   
 console.log("a");
   
